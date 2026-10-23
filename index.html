@@ -17,6 +17,9 @@
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Supabase JS Client v2 -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
     <!-- PDF.js para lectura de extractos bancarios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
@@ -240,6 +243,13 @@ Tasa: Bs. ${rate.toFixed(2)}
 
 *Por favor envíanos el captura de pago una vez realizado para procesar tu entrega.* 💕`;
         }
+
+        // Configuración de Supabase
+const SUPABASE_URL = 'https://jpdkzmoryriyqpuuzlqo.supabase.co/rest/v1/';
+const SUPABASE_ANON_KEY = 'sb_publishable_uODOi0dgZTbXCzvkb01NAA_ArL-uxnH';
+
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
 
         function App() {
             const [activeTab, setActiveTab] = useState('pedidos');
