@@ -844,7 +844,7 @@ img {
 --------------------------------
 ${isFullyPaid ? '*PAGO COMPLETADO - GRACIAS POR PREFERIRNOS* 💕' : `*_🌸 PAGO MÓVIL:_*
 Banco: ${paymentSettings.bank || 'Venezuela — 0102'}
-Tlfn: ${paymentSettings.phone || ''}
+Telefono: ${paymentSettings.phone || ''}
 C.I: ${paymentSettings.idCard || ''}
 ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs. ${rate.toFixed(2)}
 *Monto a Cancelar:* Bs. ${bsAmount.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -1173,7 +1173,7 @@ ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs.
                     id: 'cat-' + Date.now(),
                     name: newItemName,
                     price: parseFloat(newItemPrice) || 0,
-                    icon: '💐'
+                    icon: '📌'
                 };
 
                 const { error } = await supabase.from('catalog_items').insert({
@@ -2073,7 +2073,7 @@ ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs.
                 paymentMethod: order?.paymentMethod || 'Pago Móvil',
                 paymentRef: order?.paymentRef || '',
                 paymentDate: order?.paymentDate || getLocalDateString(),
-                bankAccount: order?.bankAccount || 'Venezuela — 0102',
+                bankAccount: order?.bankAccount || 'Venezolano de Crédito — 0104',
                 verificationStatus: order?.verificationStatus || 'sin_verificar',
                 deliveryStatus: order?.deliveryStatus || 'agendado',
                 photoUrl: order?.photoUrl || ''
