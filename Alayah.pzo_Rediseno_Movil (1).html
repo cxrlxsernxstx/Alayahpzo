@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>Alayah.pzo ✨</title>
+    <title>Alayah.pzo✨</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
     <meta name="theme-color" content="#8E4453">
 
@@ -660,7 +660,7 @@ img {
 
         const DEFAULT_BUSINESS_NAME = 'ALAYAH.PZO✨';
         const DEFAULT_PAYMENT_SETTINGS = {
-            bank: 'Venezuela — 0102',
+            bank: 'Venezolano de Crédito — 0104',
             phone: '',
             idCard: '',
             holder: '',
@@ -828,7 +828,7 @@ img {
  *${isFullyPaid ? 'ESTADO:' : 'Restante por Pagar:'}* ${isFullyPaid ? 'PEDIDO PAGADO COMPLETO ✅' : `$${remaining.toFixed(2)}`}
 --------------------------------
 ${isFullyPaid ? '*PAGO COMPLETADO - GRACIAS POR PREFERIRNOS* 💕' : `*_🌸 PAGO MÓVIL:_*
-Banco: ${paymentSettings.bank || 'Venezuela — 0102'}
+Banco: ${paymentSettings.bank || 'Venezolano — 0104'}
 Tlfn: ${paymentSettings.phone || ''}
 C.I: ${paymentSettings.idCard || ''}
 ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs. ${rate.toFixed(2)}
@@ -924,14 +924,14 @@ ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs.
                             name: bData.business_name || DEFAULT_BUSINESS_NAME,
                             phone: bData.phone || '',
                             logoUrl: bData.logo_url || '',
-                            exchangeRate: Number(bData.exchange_rate || 882.28)
+                            exchangeRate: Number(bData.exchange_rate || 889.25)
                         });
                     }
 
                     const { data: pData, error: pErr } = await supabase.from('payment_settings').select('*').eq('id', 1).single();
                     if (!pErr && pData) {
                         setPaymentSettings({
-                            bank: pData.bank || 'Venezuela — 0102',
+                            bank: pData.bank || 'Venezolano de Crédito — 0104',
                             phone: pData.phone || '',
                             idCard: pData.id_card || '',
                             holder: pData.holder || '',
@@ -1150,7 +1150,7 @@ ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs.
                     id: 'cat-' + Date.now(),
                     name: newItemName,
                     price: parseFloat(newItemPrice) || 0,
-                    icon: '💐'
+                    icon: '📌'
                 };
 
                 const { error } = await supabase.from('catalog_items').insert({
@@ -1723,15 +1723,15 @@ ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs.
                                 e('div', { className: "space-y-2 text-xs" },
                                     e('div', null,
                                         e('label', { className: "block font-bold text-slate-700 mb-0.5" }, "Banco"),
-                                        e('input', { type: "text", value: paymentSettings.bank, onChange: (ev) => setPaymentSettings({ ...paymentSettings, bank: ev.target.value }), onBlur: () => handleSavePaymentSettings(paymentSettings), className: "w-full px-3 py-1.5 rounded-xl border border-slate-200 font-semibold", placeholder: "Ej: Venezuela — 0102" })
+                                        e('input', { type: "text", value: paymentSettings.bank, onChange: (ev) => setPaymentSettings({ ...paymentSettings, bank: ev.target.value }), onBlur: () => handleSavePaymentSettings(paymentSettings), className: "w-full px-3 py-1.5 rounded-xl border border-slate-200 font-semibold", placeholder: "Ej: Venezolano de Crédito — 0104" })
                                     ),
                                     e('div', null,
                                         e('label', { className: "block font-bold text-slate-700 mb-0.5" }, "Teléfono"),
-                                        e('input', { type: "tel", inputMode: "numeric", value: paymentSettings.phone, onChange: (ev) => setPaymentSettings({ ...paymentSettings, phone: ev.target.value }), onBlur: () => handleSavePaymentSettings(paymentSettings), className: "w-full px-3 py-1.5 rounded-xl border border-slate-200 font-semibold", placeholder: "Ej: 04125392101" })
+                                        e('input', { type: "tel", inputMode: "numeric", value: paymentSettings.phone, onChange: (ev) => setPaymentSettings({ ...paymentSettings, phone: ev.target.value }), onBlur: () => handleSavePaymentSettings(paymentSettings), className: "w-full px-3 py-1.5 rounded-xl border border-slate-200 font-semibold", placeholder: "Ej: 0412-5392101" })
                                     ),
                                     e('div', null,
                                         e('label', { className: "block font-bold text-slate-700 mb-0.5" }, "Cédula / RIF"),
-                                        e('input', { type: "text", value: paymentSettings.idCard, onChange: (ev) => setPaymentSettings({ ...paymentSettings, idCard: ev.target.value }), onBlur: () => handleSavePaymentSettings(paymentSettings), className: "w-full px-3 py-1.5 rounded-xl border border-slate-200 font-semibold", placeholder: "Ej: V-32015394" })
+                                        e('input', { type: "text", value: paymentSettings.idCard, onChange: (ev) => setPaymentSettings({ ...paymentSettings, idCard: ev.target.value }), onBlur: () => handleSavePaymentSettings(paymentSettings), className: "w-full px-3 py-1.5 rounded-xl border border-slate-200 font-semibold", placeholder: "Ej: V-32.015.394" })
                                     ),
                                     e('div', null,
                                         e('label', { className: "block font-bold text-slate-700 mb-0.5" }, "Titular de la Cuenta"),
@@ -1782,7 +1782,7 @@ ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs.
                             ),
 
                             filteredOrders.length === 0 ? e('div', { className: "bg-white/80 backdrop-blur-md rounded-3xl border border-dashed border-roseBoutique-200 p-8 text-center my-6" },
-                                e('div', { className: "w-12 h-12 bg-roseBoutique-50 text-roseBoutique-400 rounded-2xl flex items-center justify-center mx-auto mb-2 text-2xl" }, "💐"),
+                                e('div', { className: "w-12 h-12 bg-roseBoutique-50 text-roseBoutique-400 rounded-2xl flex items-center justify-center mx-auto mb-2 text-2xl" }, "📌"),
                                 e('h3', { className: "text-xs font-bold text-slate-800" }, "No hay pedidos registrados con estos filtros")
                             ) : e('div', { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5" },
                                 filteredOrders.map(order => {
@@ -2036,7 +2036,7 @@ ${paymentSettings.holder ? `Titular: ${paymentSettings.holder}\n` : ''}Tasa: Bs.
                 paymentMethod: order?.paymentMethod || 'Pago Móvil',
                 paymentRef: order?.paymentRef || '',
                 paymentDate: order?.paymentDate || getLocalDateString(),
-                bankAccount: order?.bankAccount || 'Venezuela — 0102',
+                bankAccount: order?.bankAccount || 'Venezolano de Crédito — 0104',
                 verificationStatus: order?.verificationStatus || 'sin_verificar',
                 deliveryStatus: order?.deliveryStatus || 'agendado',
                 photoUrl: order?.photoUrl || ''
